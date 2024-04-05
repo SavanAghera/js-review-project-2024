@@ -24,7 +24,7 @@ export default class Table extends BaseTable {
     listenEvent() {
         if (!this.eventListnerAdded) {
             document.addEventListener('productAdded', () => this.render());
-            this.eventEventListnerAdded = true;
+            this.eventListnerAdded = true;
         }
     }
 }
