@@ -1,9 +1,14 @@
-class BaseTable extends BaseClass{
-    
+import BaseClass from './baseCalss.js';
+
+class BaseTable extends BaseClass {
+
     render() {
-        super.render(this.componentRenderer)
+        // console.log("render called");
+        console.log(this);
+        super.render(this.componentRenderer);
     }
-    componentRenderer() {
+    componentRenderer = () => {
+        console.log("in");
         const table = document.createElement('table');
         this.getRenderData().forEach(data => {
             const tr = document.createElement('tr');
@@ -12,19 +17,21 @@ class BaseTable extends BaseClass{
         });
         return table;
     }
-    getRenderData() {
-        
-    }
-    getCellData(data) {
-       
-    }
-    renderCells(element , cellData) {
+    // getRenderData() {
+
+    // }
+    // getCellData(data) {
+
+    // }
+    renderCells(element, cellData) {
         // do not edit this function is possible
         cellData.forEach(data => {
             const childElement = document.createElement(data.elementName);
             childElement.textContent = data.text;
-            childElement.onclick = data.handleClick
+            childElement.onclick = data.handleClick;
             element.append(childElement);
         })
     }
 }
+
+export default BaseTable;

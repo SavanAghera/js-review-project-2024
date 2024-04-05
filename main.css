@@ -14,3 +14,17 @@ td {
     border: 1px solid black;
     padding: 5px;
 }
+
+.form-container {
+    margin-left: 400px;
+    padding: 30px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-container form label {
+    margin-top: 10px;
+}
