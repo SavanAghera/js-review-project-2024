@@ -5,3 +5,5 @@ const tableData = [
     { productName: 'd', category: 'a3', price: 2 },
     { productName: 'e', category: 'a3', price: 2 },
 ];
+
+export default tableData;

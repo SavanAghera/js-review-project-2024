@@ -1,8 +1,11 @@
+import BaseClass from "./baseCalss.js";
+
 class BaseTable extends BaseClass{
     
     render() {
-        super.render(this.componentRenderer)
+        super.render(this.componentRenderer.bind(this))
     }
+
     componentRenderer() {
         const table = document.createElement('table');
         this.getRenderData().forEach(data => {
@@ -12,12 +15,15 @@ class BaseTable extends BaseClass{
         });
         return table;
     }
+
     getRenderData() {
         
     }
+
     getCellData(data) {
-       
+
     }
+    
     renderCells(element , cellData) {
         // do not edit this function is possible
         cellData.forEach(data => {
@@ -28,3 +34,5 @@ class BaseTable extends BaseClass{
         })
     }
 }
+
+export default BaseTable;
