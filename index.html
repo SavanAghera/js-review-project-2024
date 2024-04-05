@@ -1,23 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="main.js"></script>
     <script src="baseCalss.js"></script>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <form action="">
+      productName: <input id="productName" type="text" /> category:
+      <input id="category" type="text" /> price:
+      <input id="price" type="number" />
+
+      <button id="addBtn">ADD</button>
+    </form>
     <div id="main">
-        <div id="SideBar"></div>
-        <div id="Table"></div>
+      <div id="SideBar"></div>
+      <div id="Table"></div>
     </div>
     <script src="./baseTable.js"></script>
     <script src="./components/table.js"></script>
     <script src="./components/sidebar.js"></script>
     <script src="./componentRender.js"></script>
-</body>
+
+    <script>
+      const addBtn = document.getElementById("addBtn");
+      const productNameInput = document.getElementById("productName");
+      const categoryInput = document.getElementById("category");
+      const priceInput = document.getElementById("price");
+
+      addBtn.addEventListener("click", () => {
+        event.preventDefault();
+        const productName = productNameInput.value;
+        const category = categoryInput.value;
+        const price = +priceInput.value;
+
+        const productNameExists = tableData.some(
+          (element) => element.productName === productName
+        );
+
+        if (!productNameExists) {
+          tableData.push({ productName, category, price });
+          console.log(tableData);
+          let event = new Event("delete");
+          document.dispatchEvent(event);
+        } else {
+          alert("Product name already exists. Please choose a different name.");
+        }
+      });
+    </script>
+  </body>
 </html>
