@@ -17,20 +17,17 @@ class SideBar extends BaseTable {
             return { category, count, totalPrice };
         });
         return categories;
-        
-    }   
+
+    }
     getCellData(data) {
         return [
-            {text:data.category , elementName:'td', handleClick:''},
-            {text:data.count, elementName:'td', handleClick: ''},
-            {text:data.totalPrice, elementName:'td', handleClick: ''},
+            { text: data.category, elementName: 'td', handleClick: '' },
+            { text: data.count, elementName: 'td', handleClick: '' },
+            { text: data.totalPrice, elementName: 'td', handleClick: '' },
         ]
     }
     listenEvent() {
-        if (!this.eventListened) {
-            document.addEventListener('delete', () =>  this.render())
-            this.eventListened = true;
-        }
+        document.addEventListener('delete', () => {this.render();console.log("sidebar");})
     }
 
 }

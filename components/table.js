@@ -19,10 +19,8 @@ class Table extends BaseTable {
         this.render();
     }
     listenEvent() {
-        if (!this.eventListened) {
-            document.addEventListener('added', () => this.render())
-            this.eventListened = true;
-        }
+        document.addEventListener('added', () => { this.render(); console.log("table"); })
+        this.eventListened = true;
     }
 }
 export default Table;

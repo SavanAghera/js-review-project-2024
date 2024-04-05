@@ -16,9 +16,9 @@ form.addEventListener(("submit"),function(event) {
     tableData.push({ productName: product.value.trim(), category: category.value.trim(), price: +price.value })
     document.dispatchEvent(new Event("added"));
     document.dispatchEvent(new Event("delete"));
-    product.value=""
-    category.value=""
-    price.value=""
-    product.focus();
+    // product.value=""
+    // category.value=""
+    // price.value=""
+    // product.focus();
 });
 export default tableData;
