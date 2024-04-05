@@ -1,7 +1,7 @@
 class BaseClass {
     constructor() {
         this.element = document.getElementById(this.constructor.name);
-
+        this.isEventAdded = false;
     }
     render(renderFun) {
         const childElement = renderFun();

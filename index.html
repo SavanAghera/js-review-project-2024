@@ -5,19 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
     <script src="baseCalss.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    
-    <div id="main">
-        <div id="SideBar"></div>
-        <div id="Table"></div>
+    <div class="container">
+        <div class="addProducs">
+            <input type="text"  id="pName" placeholder="Product Name">
+            <input type="text"  id="pCategory" placeholder="Category">
+            <input type="number"  id="pPrice" placeholder="price">
+            <button id="addBtn">Add Product</button>
+        </div>
+        <div id="main">
+            <div id="SideBar"></div>
+            <div id="Table"></div>
+        </div>
     </div>
-    <script src="./baseTable.js"></script>
-    <script src="./components/table.js"></script>
-    <script src="./components/sidebar.js"></script>
-    <script src="./componentRender.js"></script>
+    <script type="module" src="./baseTable.js"></script>
+    <script type="module" src="./components/table.js"></script>
+    <script type="module" src="./components/sidebar.js"></script>
+    <script type="module" src="./componentRender.js"></script>
 </body>
 </html>

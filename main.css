@@ -1,16 +1,41 @@
 #main{
     display: flex;
+    justify-content: space-between;
+    gap: 20px;
 }
+
 #SideBar {
     flex:1;
     border: 1px solid black;
+    padding: 10px;
 }
 
 #Table {
     flex: 2;
     border: 1px solid black;
+    padding: 10px;
+}
+tr{
+    display: flex;
+    margin: 10px auto;
+    gap: 10px;
 }
 td {
     border: 1px solid black;
     padding: 5px;
+    font-size: 30px;
+}
+button{
+    font-size: 20px;
+}
+.addProducs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+    gap: 8px;
+}
+.addProducs > input {
+    font-size: 20px;
+    padding: 3px 4px;
 }
