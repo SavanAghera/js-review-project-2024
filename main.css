@@ -19,10 +19,9 @@ td {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin-bottom: 10px;
-    /* background: #000; */
 }
 
 #message{
     color: red;
+    margin: 5px;
 }

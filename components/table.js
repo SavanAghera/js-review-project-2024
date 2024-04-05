@@ -11,10 +11,13 @@ class Table extends BaseTable {
             {
                 text: "delete", elementName: 'button', handleClick: () => {
                     delete tableData[index]
-                    new Table().render()
-                    new SideBar().render()
+                    document.dispatchEvent(new CustomEvent('delete'));
                 }
             },
         ]
+    }
+    listenEvent() {
+        document.addEventListener('delete', () => this.render())
+        document.addEventListener('add', () => this.render())
     }
 }

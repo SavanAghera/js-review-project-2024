@@ -9,17 +9,15 @@ function addNewData() {
         category: pCategory.value.trim(),
         price: +pPrice.value,
     }
-    console.log(newData.price > 0)
     if (newData.productName !== '' && newData.category !== '' && newData.price > 0) {
         tableData.push(newData)
         pName.value = '';
         pCategory.value = '';
         pPrice.value = '';
-        new Table().render()
-        new SideBar().render()
+        document.dispatchEvent(new CustomEvent('add'));
         message.textContent = ''
     } else {
-        message.textContent = 'Enter Valid Input !!!'
+        message.textContent = 'Enter Valid Input in Price (Price must be > 0) !!!'
     }
 }
 

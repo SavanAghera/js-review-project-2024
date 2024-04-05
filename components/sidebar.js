@@ -30,6 +30,7 @@ class SideBar extends BaseTable {
     }
     listenEvent() {
         document.addEventListener('delete', () => this.render())
+        document.addEventListener('add', () => this.render())
     }
 
 }
