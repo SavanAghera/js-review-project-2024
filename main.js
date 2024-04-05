@@ -11,16 +11,16 @@ function addProduct() {
     const categoryInput = document.getElementById("category");
     const priceInput = document.getElementById("price");
 
-    const productName = productNameInput.value;
-    const category = categoryInput.value;
-    const price = +priceInput.value;
+    const productName = productNameInput.value.trim();
+    const category = categoryInput.value.trim();
+    const price = +priceInput.value.trim();
 
     productNameInput.value = "";
     categoryInput.value = "";
     priceInput.value = "";
 
-    if (!isFinite(price)) {
-        alert("price should be number");
+    if (!isFinite(price) && price > 0) {
+        alert("price should be number and greater than 0");
         return;
     }
     if (!productName || !category || !price) {
