@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,15 +10,26 @@
     <script src="baseCalss.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-    
-    <div id="main">
-        <div id="SideBar"></div>
-        <div id="Table"></div>
+
+    <div id="baseClass">
+        <div id="addData">
+            <input type="text" id="productNameInput" placeholder="Product Name">
+            <input type="text" id="categoryInput" placeholder="Category">
+            <input type="number" id="priceInput" placeholder="Price">
+            <button id="addButton">Add</button>
+        </div>
+        <div id="show">
+            <div id="SideBar"></div>
+            <div id="Table"></div>
+        </div>
     </div>
     <script src="./baseTable.js"></script>
     <script src="./components/table.js"></script>
     <script src="./components/sidebar.js"></script>
     <script src="./componentRender.js"></script>
+    <script src="./components/addData.js"></script>
 </body>
+
 </html>

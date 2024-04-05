@@ -1,18 +1,35 @@
 class SideBar extends BaseTable {
-    getRenderData() {
-        const categories = [];
-    }
-    getCellData(data) {
-        return [
-            {text:data.name , elementName:'td', handleClick:''},
-            {text:data.count, elementName:'td', handleClick: ''},
-            {text:data.price, elementName:'td', handleClick: ''},
-        ]
-    }
-    listenEvent() {
-        document.addEventListener('delete', () => this.render())
-    }
+  constructor() {
+    super();
+  }
 
+  getRenderData() {
+    const categories = {};
+    tableData.forEach((item) => {
+      const { category, productName, price } = item;
+      if (!categories[category]) {
+        categories[category] = {
+          name: category,
+          count: 0,
+          totalPrice: 0,
+        };
+      }
+      categories[category].count++;
+      categories[category].totalPrice += price;
+    });
+    return Object.values(categories);
+  }
+  getCellData(data) {
+    return [
+      { text: data.name, elementName: "td", handleClick: "" },
+      { text: data.count, elementName: "td", handleClick: "" },
+      { text: data.totalPrice, elementName: "td", handleClick: "" },
+    ];
+  }
+  listenEvent() {
+    if (!this.flag) {
+      document.addEventListener("delete", () => this.render());
+      this.flag = !this.flag;
+    }
+  }
 }
-
-
