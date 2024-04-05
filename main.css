@@ -14,3 +14,21 @@ td {
     border: 1px solid black;
     padding: 5px;
 }
+#addProduct{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    gap: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+input{
+    padding: 5px;
+}
+#addBtn{
+    padding: 10px;
+    width: 100px;
+    background-color: lightgreen;
+    cursor: pointer;
+}
