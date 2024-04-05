@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <div class="container">
+        <form id="form">
+            <input type="text" id="productName" />
+            <input type="text" id="category" />
+            <input type="number" id="price" />
+    
+            <input type="submit" value="Add"/>
+        </form>
+    </div>
     
     <div id="main">
         <div id="SideBar"></div>
@@ -19,5 +28,26 @@
     <script src="./components/table.js"></script>
     <script src="./components/sidebar.js"></script>
     <script src="./componentRender.js"></script>
+    <script>
+        document.getElementById("form").addEventListener("submit", function(e){
+            e.preventDefault();
+            const productName= document.getElementById("productName").value.trim();
+            const category= document.getElementById("category").value.trim();
+            const price= document.getElementById("price").value.trim();
+
+            if(!productName || !category || !price){
+                alert("Please fill all the fields")
+                return;
+            }
+
+            const addNewDataEvent= new Event("addNewData")
+            addNewDataEvent.data={productName,category,price:+price}
+            document.dispatchEvent(addNewDataEvent)
+
+            document.getElementById("productName").value=""
+            document.getElementById("category").value=""
+            document.getElementById("price").value=""
+        })
+    </script>
 </body>
 </html>
