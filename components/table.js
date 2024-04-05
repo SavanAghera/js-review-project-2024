@@ -2,10 +2,6 @@ import { BaseTable } from "../baseTable.js";
 import { tableData } from '../main.js';
 
 export class Table extends BaseTable{
-    constructor() {
-        super();
-        this.eventListenerAdded = false;
-    }
     getRenderData() {
         return tableData
     }
@@ -26,9 +22,6 @@ export class Table extends BaseTable{
         document.dispatchEvent(new Event('delete'));
     }
     listenEvent() {
-        if (!this.eventListenerAdded) {
             document.addEventListener('render', () => this.render());
-            this.eventListenerAdded = true;
-        }
     }
 }
