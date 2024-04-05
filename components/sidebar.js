@@ -1,6 +1,6 @@
 class SideBar extends BaseTable {
     getRenderData() {
-        const categories = [];
+        return sideBarData
     }
     getCellData(data) {
         return [
@@ -12,7 +12,4 @@ class SideBar extends BaseTable {
     listenEvent() {
         document.addEventListener('delete', () => this.render())
     }
-
 }
-
-

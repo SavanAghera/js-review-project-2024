@@ -1,11 +1,14 @@
 class BaseTable extends BaseClass{
-    
     render() {
         super.render(this.componentRenderer)
     }
     componentRenderer() {
         const table = document.createElement('table');
         this.getRenderData().forEach(data => {
+            if (data.hasOwnProperty('count') && data.count <= 0){
+                return;
+            }
+
             const tr = document.createElement('tr');
             this.renderCells(tr, this.getCellData(data))
             table.append(tr)
