@@ -14,3 +14,15 @@ td {
     border: 1px solid black;
     padding: 5px;
 }
+
+#userInput, #form, button{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+    /* background: #000; */
+}
+
+#message{
+    color: red;
+}

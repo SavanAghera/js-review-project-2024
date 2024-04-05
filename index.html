@@ -13,6 +13,17 @@
 
     <body>
 
+        <form id="form">
+            <label for="userInput">Enter your Data:</label>
+            <div id="userInput">
+                <input value="aa" type="text" id="pName" name="pName" placeholder="Name" required>
+                <input value="a1" type="text" id="pCatgorye" name="pCategory" placeholder="Category" required>
+                <input value="-1" type="number" id="pPrice" name="pPrice" placeholder="Price">
+            </div>
+
+            <button type="submit">Add</button>
+        </form>
+        <div id="message"></div>
         <div id="main">
             <div id="SideBar"></div>
             <div id="Table"></div>
@@ -21,6 +32,14 @@
         <script src="./components/table.js"></script>
         <script src="./components/sidebar.js"></script>
         <script src="./componentRender.js"></script>
+        <script>
+            const form = document.getElementById("form");
+            function handleForm(event) {
+                event.preventDefault();
+                addNewData();
+            }
+            form.addEventListener('submit', handleForm);
+        </script>
     </body>
 
 </html>

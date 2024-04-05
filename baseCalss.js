@@ -4,6 +4,7 @@ class BaseClass {
 
     }
     render(renderFun) {
+        console.log("RENDERD ", this.element);
         const childElement = renderFun();
         this.element.innerHTML = '';
         this.element.append(childElement);

@@ -8,7 +8,7 @@ class SideBar extends BaseTable {
                 if (category.name === data.category) {
                     alredyCate = true;
                     category.count += 1;
-                    category.price += data.price;
+                    category.price += +data.price;
                 }
             })
             if (!alredyCate) {
