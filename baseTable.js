@@ -1,10 +1,15 @@
+
 class BaseTable extends BaseClass{
     
     render() {
-        super.render(this.componentRenderer)
+       
+        super.render(this.componentRenderer);
+        // super.render(componentRenderer.bind(this));
+
     }
     componentRenderer() {
         const table = document.createElement('table');
+      
         this.getRenderData().forEach(data => {
             const tr = document.createElement('tr');
             this.renderCells(tr, this.getCellData(data))
@@ -13,10 +18,10 @@ class BaseTable extends BaseClass{
         return table;
     }
     getRenderData() {
-        
+  
     }
     getCellData(data) {
-       
+ 
     }
     renderCells(element , cellData) {
         // do not edit this function is possible
