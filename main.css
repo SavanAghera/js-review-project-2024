@@ -14,3 +14,10 @@ td {
     border: 1px solid black;
     padding: 5px;
 }
+
+#content{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
