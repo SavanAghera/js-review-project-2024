@@ -1,6 +1,25 @@
-class SideBar extends BaseTable {
+import BaseTable from "../baseTable.js";
+import { tableData, dflag } from "../main.js";
+
+export default class SideBar extends BaseTable {
     getRenderData() {
-        const categories = [];
+        // const categories = [];
+       
+        const categories = tableData.reduce((acc, curr) => {
+            const exist = acc.find(item => item.name === curr.category);
+            if (exist) {
+                exist.count++;
+                exist.price += curr.price;
+            } else {
+                acc.push({
+                    name: curr.category,
+                    count: 1,
+                    price: curr.price
+                });
+            }
+            return acc;
+        }, []);
+        return categories;
     }
     getCellData(data) {
         return [
@@ -10,9 +29,11 @@ class SideBar extends BaseTable {
         ]
     }
     listenEvent() {
-        document.addEventListener('delete', () => this.render())
+        if(dflag.flag){
+            document.addEventListener('delete', () => this.render());
+            dflag.flag = false;
+        }
+        return;
     }
 
 }
-
-
