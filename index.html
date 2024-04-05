@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="main.js"></script>
     <script src="baseCalss.js"></script>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="addElem">
+      <input type="text" id="productName" placeholder="Enter Product Name" />
+      <input type="text" id="productCategory" placeholder="Enter Category" />
+      <input type="number" id="productPrice" placeholder="Enter Price" />
+      <button>Add</button>
+    </div>
     <div id="main">
-        <div id="SideBar"></div>
-        <div id="Table"></div>
+      <div id="SideBar"></div>
+      <div id="Table"></div>
     </div>
     <script src="./baseTable.js"></script>
+    <script src="./components/addElement.js"></script>
     <script src="./components/table.js"></script>
     <script src="./components/sidebar.js"></script>
     <script src="./componentRender.js"></script>
-</body>
+  </body>
 </html>
