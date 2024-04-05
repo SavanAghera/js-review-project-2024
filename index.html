@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="main.js"></script>
-    <script src="baseCalss.js"></script>
+    <script src="main.js" type="module"></script>
+    <script src="baseCalss.js" type="module"></script>
+
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-    
+    <label for="input1">Product :</label>
+    <input type="text" id="product" name="input1">
+
+    <!-- Second input element -->
+    <label for="input2">Category :</label>
+    <input type="text" id="category" name="input2">
+
+    <!-- Third input element -->
+    <label for="input3">Price :</label>
+    <input type="text" id="price" name="input3">
+
+    <Button id="add">Add</Button>
     <div id="main">
         <div id="SideBar"></div>
         <div id="Table"></div>
     </div>
-    <script src="./baseTable.js"></script>
-    <script src="./components/table.js"></script>
-    <script src="./components/sidebar.js"></script>
-    <script src="./componentRender.js"></script>
+
+    <script src="./baseTable.js" type="module"></script>
+    <script src="./components/table.js" type="module"></script>
+    <script src="./components/sidebar.js" type="module"></script>
+    <script src="./componentRender.js" type="module"></script>
+    <!-- <script src="./main.js"></script> -->
 </body>
+
 </html>

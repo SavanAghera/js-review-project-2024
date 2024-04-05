@@ -5,3 +5,20 @@ const tableData = [
     { productName: 'd', category: 'a3', price: 2 },
     { productName: 'e', category: 'a3', price: 2 },
 ];
+
+const add = document.getElementById('add')
+
+
+add.addEventListener('click', (event) => {
+    event.preventDefault();
+    const price = document.getElementById('price').value;
+    const product = document.getElementById('product').value;
+    const category = document.getElementById('category').value;
+    if (price && product && category) {
+        const obj = { 'productName': product, 'category': category, 'price': +price }
+        console.log(obj);
+        tableData.push(obj);
+    }
+})
+
+export default tableData;

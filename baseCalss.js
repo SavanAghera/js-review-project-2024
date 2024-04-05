@@ -1,7 +1,6 @@
 class BaseClass {
     constructor() {
         this.element = document.getElementById(this.constructor.name);
-
     }
     render(renderFun) {
         const childElement = renderFun();
@@ -10,6 +9,7 @@ class BaseClass {
         this.listenEvent();
     }
     listenEvent() {
-
+        console.log("Hii from baseClass");
     }
 }
+export default BaseClass;

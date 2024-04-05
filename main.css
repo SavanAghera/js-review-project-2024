@@ -1,5 +1,8 @@
 #main{
     display: flex;
+    position: relative;
+    /* justify-content: center; */
+    top: 1rem;
 }
 #SideBar {
     flex:1;
