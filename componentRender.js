@@ -1,1 +1,8 @@
-(()=>()=>{[Table ,SideBar].map(component => new component().render())})()();
+(() => () => {
+    [Table, SideBar].map(
+        component => {
+            const obj = new component();
+            obj.render();
+            obj.listenEvent();
+        })
+})()();
