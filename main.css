@@ -14,3 +14,8 @@ td {
     border: 1px solid black;
     padding: 5px;
 }
+
+input,button{
+    padding: 0.4em;
+    margin: 0.3em;
+}
