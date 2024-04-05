@@ -31,17 +31,38 @@ document.addEventListener('DOMContentLoaded', () => {
             price: form.price.value
         }
 
-        if (!data.productName.trim() || !data.category.trim() || !+data.price || !data.price.trim()){
-            alert('Invalid field!');
+        if (!data.price.trim() || !data.productName.trim() || !data.category.trim()){
+            alert("Fileds cannot be empty!")
+            return;
+        }
+        
+        if (!(+data.price && +data.price >= 0)){
+            alert("Invalid price!")
             return;
         }
 
-        for (let item in tableData){
-            if (tableData[item].productName === data.productName && tableData[item].category === data.category){
-                alert('That category product already exists!')
-                return;
+        data.price = Number(data.price)
+
+        let alreadyExist  = false
+        tableData.forEach((item, index) => {
+            if (item.productName === data.productName && item.category === data.category){
+                alreadyExist = true
+
+                sideBarData.forEach(sideBar_item => {
+                    if (sideBar_item.name === data.category){
+                        debugger
+                        sideBar_item.price -= item.price
+                        sideBar_item.price += +data.price
+                    }
+                })
+
+                tableData.splice(index, 1, data)
+
+                document.dispatchEvent(deleteEvent)
             }
-        }
+        })
+        if (alreadyExist) return;
+
 
         tableData.push(data)
 
