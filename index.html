@@ -9,8 +9,19 @@
     <script src="baseCalss.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
-    
+<body> 
+    <div>
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName">
+
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category">
+
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price">
+
+        <button onclick="addProduct()">Add Product</button>
+    </div> 
     <div id="main">
         <div id="SideBar"></div>
         <div id="Table"></div>
