@@ -1,7 +1,13 @@
-class BaseTable extends BaseClass{
-    
+import { tableData } from './main.js';
+import { BaseClass } from './baseCalss.js';
+
+export class BaseTable extends BaseClass{
+    constructor() {
+        super();
+        this.data = tableData;
+    }
     render() {
-        super.render(this.componentRenderer)
+        super.render(this.componentRenderer.bind(this));
     }
     componentRenderer() {
         const table = document.createElement('table');
@@ -13,10 +19,10 @@ class BaseTable extends BaseClass{
         return table;
     }
     getRenderData() {
-        
+        // return this.data;
     }
     getCellData(data) {
-       
+        // return Object.values(data);
     }
     renderCells(element , cellData) {
         // do not edit this function is possible
