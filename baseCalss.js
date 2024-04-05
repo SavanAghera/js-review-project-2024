@@ -10,6 +10,6 @@ class BaseClass {
         this.listenEvent();
     }
     listenEvent() {
-
+       // To be implemented by child classes 
     }
 }
