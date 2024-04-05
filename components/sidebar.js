@@ -6,14 +6,19 @@ class SideBar extends BaseTable {
         const categories = [];
 
         tableData.forEach(data => {
-            const existingCategoryIndex = categories.findIndex(cat => cat.count === data.category);
-
+            // count
+            const existingCategoryIndex = categories.findIndex(cat => cat.name === data.category);
+            
             if (existingCategoryIndex !== -1) {
                 categories[existingCategoryIndex].price += data.price;
+                categories[existingCategoryIndex].count++;
             } else {
-                categories.push({ name: data.productName, count: data.category, price: data.price });
+                categories.push({ name: data.category, count: 1, price: data.price });
             }
         });
+        // tableData.forEach((data)=>{
+        //     const alreadyexists = categories.findIndex(ca)
+        // })
         return categories;
     }
 
