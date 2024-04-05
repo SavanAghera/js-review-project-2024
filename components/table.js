@@ -14,13 +14,15 @@ class Table extends BaseTable {
         ]
     }
     deleteEvent(data) {
-        console.log(tableData.indexOf(data));
         tableData.splice(tableData.indexOf(data), 1)
         document.dispatchEvent(new Event("delete"))
         this.render();
     }
     listenEvent() {
-        document.addEventListener('added', () => this.render())
+        if (!this.eventListened) {
+            document.addEventListener('added', () => this.render())
+            this.eventListened = true;
+        }
     }
 }
 export default Table;

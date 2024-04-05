@@ -2,6 +2,7 @@ import BaseTable from "../baseTable.js";
 import tableData from "../main.js";
 
 class SideBar extends BaseTable {
+
     getRenderData() {
         let categories = [];
         const groupedData = tableData.reduce((acc, item) => {
@@ -26,8 +27,10 @@ class SideBar extends BaseTable {
         ]
     }
     listenEvent() {
-        document.addEventListener('delete', () => this.render())
-        document.addEventListener('added', () => this.render())
+        if (!this.eventListened) {
+            document.addEventListener('delete', () =>  this.render())
+            this.eventListened = true;
+        }
     }
 
 }
