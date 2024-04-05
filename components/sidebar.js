@@ -28,6 +28,9 @@ export default class SideBar extends BaseTable {
         ]
     }
     listenEvent() {
-        document.addEventListener('delete', () => this.render());
+        if (!this.eventListenerAdded) {
+            document.addEventListener('delete', () => this.render());
+            this.eventListenerAdded = true;
+        }
     }
 }

@@ -9,10 +9,10 @@ export default class Table extends BaseTable {
             { text: data.productName, elementName: 'td', handleClick: '' },
             { text: data.category, elementName: 'td', handleClick: '' },
             { text: data.price, elementName: 'td', handleClick: '' },
-            { text: "delete", elementName: "button", handleClick: this.delete }
+            { text: "delete", elementName: "button", handleClick: this.deleteCell }
         ]
     }
-    delete() {
+    deleteCell() {
         const category = this.parentElement.children[1].innerText;
         this.parentElement.remove();
         const toDeleteIdx = tableData.findIndex((data) => {
@@ -22,6 +22,9 @@ export default class Table extends BaseTable {
         document.dispatchEvent(new Event("delete"));
     }
     listenEvent() {
-        document.addEventListener('productAdded', () => this.render());
+        if (!this.eventListnerAdded) {
+            document.addEventListener('productAdded', () => this.render());
+            this.eventEventListnerAdded = true;
+        }
     }
 }

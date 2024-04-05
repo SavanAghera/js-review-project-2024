@@ -2,7 +2,6 @@ import BaseClass from "./baseCalss.js";
 import { tableData } from "../main.js";
 
 class BaseTable extends BaseClass {
-
     render() {
         super.render(this.componentRenderer.bind(this));
     }

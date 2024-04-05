@@ -32,6 +32,8 @@ function addProduct() {
     })
     document.dispatchEvent(new Event("productAdded"));
     document.dispatchEvent(new Event("delete"));
+
+
     alert("Product Added");
 }
 addBtn.addEventListener("click", addProduct);
