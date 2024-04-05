@@ -14,16 +14,17 @@ export class Table extends BaseTable {
     handleDelete(rowData) {
         // Implement logic to delete the row from the data source
         // For example:
-        // document.dispatchEvent(new Event("delete"))
         const index = this.getRenderData().findIndex(item => item === rowData);
         if (index !== -1) {
-            tableData.splice(index,1)
+            tableData.splice(index, 1)
             // this.getRenderData().splice(index, 1);
-            this.render(); // Re-render the table after deletion
+            document.dispatchEvent(new Event("delete"))
+
+            // this.render(); // Re-render the table after deletion
         }
     }
     listenEvent() {
-        document.addEventListener('click', () => this.render())
+            document.addEventListener('delete', () => this.render())
     }
 
 }

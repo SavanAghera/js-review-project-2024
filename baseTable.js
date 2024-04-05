@@ -2,6 +2,7 @@ class BaseTable extends BaseClass{
     
     render() {
         super.render(this.componentRenderer)
+        console.log("event triggered");
     }
     componentRenderer =()=> {
         const table = document.createElement('table');

@@ -30,7 +30,7 @@ export class SideBar extends BaseTable {
         ]
     }
     listenEvent() {
-        document.addEventListener('click', () => this.render())
+            document.addEventListener('delete', () => this.render())
     }
 
 }
