@@ -1,24 +1,24 @@
-class BaseTable extends BaseClass{
-    
+class BaseTable extends BaseClass {
+
     render() {
-        super.render(this.componentRenderer)
+        super.render(this.componentRenderer.bind(this));
     }
     componentRenderer() {
         const table = document.createElement('table');
-        this.getRenderData().forEach(data => {
+        this.getRenderData().forEach((data, index) => {
             const tr = document.createElement('tr');
-            this.renderCells(tr, this.getCellData(data))
+            this.renderCells(tr, this.getCellData(data, index))
             table.append(tr)
         });
         return table;
     }
     getRenderData() {
-        
+
     }
     getCellData(data) {
-       
+
     }
-    renderCells(element , cellData) {
+    renderCells(element, cellData) {
         // do not edit this function is possible
         cellData.forEach(data => {
             const childElement = document.createElement(data.elementName);
