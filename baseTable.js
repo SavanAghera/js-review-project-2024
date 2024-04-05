@@ -1,5 +1,5 @@
 import { tableData } from './main.js';
-import { BaseClass } from './baseCalss.js';
+import { BaseClass } from './baseClass.js';
 
 export class BaseTable extends BaseClass{
     constructor() {

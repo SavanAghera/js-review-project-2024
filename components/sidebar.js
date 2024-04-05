@@ -2,6 +2,10 @@ import { BaseTable } from "../baseTable.js";
 import { tableData } from '../main.js';
 
 export class SideBar extends BaseTable {
+    constructor() {
+        super();
+        this.eventListenerAdded = false;
+    }
     getRenderData() {
         const categories = [];
         tableData.forEach(item => {
@@ -28,7 +32,10 @@ export class SideBar extends BaseTable {
         ]
     }
     listenEvent() {
-        document.addEventListener('delete', () => this.render())
+        if (!this.eventListenerAdded) {
+            document.addEventListener('delete', () => this.render());
+            this.eventListenerAdded = true;
+        }
     }
 
 }
