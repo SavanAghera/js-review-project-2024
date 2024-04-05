@@ -9,6 +9,9 @@ class BaseClass {
         this.element.append(childElement);
         this.listenEvent();
     }
+    // getRenderData() {
+    //     return tableData;
+    // }
     listenEvent() {
 
     }
