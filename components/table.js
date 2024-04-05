@@ -8,9 +8,7 @@ class Table extends BaseTable {
         const closestRow = event.target.closest('tr');
         const rowIndex = Array.from(closestRow.parentNode.children).indexOf(closestRow);
         tableData.splice(rowIndex, 1);
-        closestRow.remove();
-        // this.render();
-        return tableData;
+        document.dispatchEvent(new Event('delete'))
     }
 
     getCellData(data) {
@@ -22,7 +20,13 @@ class Table extends BaseTable {
         ]
     }
     listenEvent() {
-        document.addEventListener('click', () => this.render())
+        if (!this.flag) {
+            document.addEventListener('delete', () => {
+                this.render();
+                // console.log("hi")
+            })
+            this.flag=true;
+        }
     }
 }
 

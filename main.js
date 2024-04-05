@@ -14,10 +14,17 @@ add.addEventListener('click', (event) => {
     const price = document.getElementById('price').value;
     const product = document.getElementById('product').value;
     const category = document.getElementById('category').value;
-    if (price && product && category) {
+    if (price && product && category && Number(price)) {
         const obj = { 'productName': product, 'category': category, 'price': +price }
         console.log(obj);
         tableData.push(obj);
+        document.dispatchEvent(new Event('delete'))
+    }
+    else if(!price || !product || !category){
+        alert("Enter details")
+    }
+    else{
+        alert("Enter Proper amount")
     }
 })
 
