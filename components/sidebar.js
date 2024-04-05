@@ -1,6 +1,25 @@
 class SideBar extends BaseTable {
     getRenderData() {
-        const categories = [];
+        const categories = [...new Set(tableData.map(item => item.category))];
+        let arrayToReturn = [];
+
+        for(let item of categories){
+            let tempObj = {};
+            tempObj.name = item;
+            tempObj.count = 0;
+            tempObj.price = 0;
+
+            for(let product of tableData){
+                if(product.category == item){
+                    tempObj.count++;
+                    tempObj.price += product.price;
+                }
+            }
+
+            arrayToReturn.push(tempObj);
+        }
+
+        return arrayToReturn;
     }
     getCellData(data) {
         return [
