@@ -1,8 +1,9 @@
-#main{
+#main {
     display: flex;
 }
+
 #SideBar {
-    flex:1;
+    flex: 1;
     border: 1px solid black;
 }
 
@@ -10,7 +11,25 @@
     flex: 2;
     border: 1px solid black;
 }
+
 td {
     border: 1px solid black;
     padding: 5px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.input {
+    width: 300px;
+    margin: 10px;
+}
+
+#addbtn {
+    width: 120px;
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
