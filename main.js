@@ -9,7 +9,11 @@ form.addEventListener(("submit"),function(event) {
         alert("please enter all the fields");
         return;
     }
-    tableData.push({ productName: product.value, category: category.value, price: +price.value })
+    else if (+price.value<0) {
+        alert("please enter valid price");
+        return;
+    }
+    tableData.push({ productName: product.value.trim(), category: category.value.trim(), price: +price.value })
     document.dispatchEvent(new Event("added"));
     document.dispatchEvent(new Event("delete"));
     product.value=""
