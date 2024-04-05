@@ -1,6 +1,25 @@
-class SideBar extends BaseTable {
+import BaseTable from "../baseTable.js";
+import tableData from "../main.js";
+
+export default class SideBar extends BaseTable {
     getRenderData() {
         const categories = [];
+        tableData.forEach(item => {
+                    const category = item.category;
+                    const existingCategory = categories.find(cat => cat.name === category);
+                    if (!existingCategory) {
+                        categories.push({
+                            name: category,
+                            count: 1,
+                            price: item.price
+                        });
+                    } else {
+                        existingCategory.count++;
+                        existingCategory.price += item.price;
+                    }
+                });
+                console.log(categories);
+                return categories;
     }
     getCellData(data) {
         return [

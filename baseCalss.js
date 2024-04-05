@@ -1,4 +1,4 @@
-class BaseClass {
+export default class BaseClass {
     constructor() {
         this.element = document.getElementById(this.constructor.name);
 
@@ -7,9 +7,10 @@ class BaseClass {
         const childElement = renderFun();
         this.element.innerHTML = '';
         this.element.append(childElement);
-        this.listenEvent();
+        // this.listenEvent();
     }
     listenEvent() {
 
     }
 }
+
