@@ -6,6 +6,8 @@ class Table extends BaseTable{
         return [
             {text:data.productName, elementName:'td', handleClick:''},
             {text:data.category, elementName:'td', handleClick: ''},
+            {text: data.price, elementName: 'td', handleClick: '' }
         ]
     }
 }
+

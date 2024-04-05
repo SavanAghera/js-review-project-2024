@@ -1,7 +1,6 @@
 class BaseClass {
     constructor() {
-        this.element = document.getElementById(this.constructor.name);
-
+        this.element = document.getElementById(this.constructor.name); 
     }
     render(renderFun) {
         const childElement = renderFun();
