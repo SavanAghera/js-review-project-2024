@@ -1,7 +1,7 @@
 class BaseTable extends BaseClass{
     
     render() {
-        super.render(this.componentRenderer)
+        super.render(this.componentRenderer.bind(this))
     }
     componentRenderer() {
         const table = document.createElement('table');
@@ -13,7 +13,7 @@ class BaseTable extends BaseClass{
         return table;
     }
     getRenderData() {
-        
+        // return tableData;
     }
     getCellData(data) {
        

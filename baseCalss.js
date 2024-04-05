@@ -10,6 +10,6 @@ class BaseClass {
         this.listenEvent();
     }
     listenEvent() {
-
+ 
     }
 }
