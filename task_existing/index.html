@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+    <script src="baseCalss.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<script>
+    function add(){
+        let product=document.getElementById("productn").value;
+        let cate=document.getElementById("cate").value;
+        let pricee=document.getElementById("price").value;
+        tableData.push({ productName: product, category: cate, price: pricee ,button:"delete"})
+        console.log(tableData);
+        (()=>()=>{[Table ,SideBar].map(component => new component().render())})()();
+       }
+</script>
+<body>
+    <div> <input type="text" id="productn"><input type="text" id="cate"><input type="text" id="price"><button onclick="add()">ADD</button></div>
+    <div id="main">
+        
+        <div id="SideBar"></div>
+        <div id="Table"></div>
+    </div>
+    <script src="./baseTable.js"></script>
+    <script src="./components/table.js"></script>
+    <script src="./components/sidebar.js"></script>
+    <script src="./componentRender.js"></script>
+</body>
+</html>
