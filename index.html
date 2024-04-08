@@ -1,23 +1,37 @@
+
 <!DOCTYPE html>
 <html lang="en">
+ 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="main.js"></script>
-    <script src="baseCalss.js"></script>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="baseClass.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
+ 
 <body>
-    
+ 
+    <label for="productName">ProductName:</label>
+    <input type="text" id="productName" placeholder="productName">
+    <label for="category">Category:</label>
+    <input type="text" id="category" placeholder="category">
+    <label for="price">Price:</label>
+    <input type="number" id="price" placeholder="price">
+    <button id="add">ADD</button>
+    <br>
+    <br>
+ 
     <div id="main">
         <div id="SideBar"></div>
         <div id="Table"></div>
     </div>
-    <script src="./baseTable.js"></script>
-    <script src="./components/table.js"></script>
-    <script src="./components/sidebar.js"></script>
-    <script src="./componentRender.js"></script>
+    <script type="module" src="baseTable.js"></script>
+    <script type="module" src="./components/table.js"></script>
+    <script type="module" src="./components/sidebar.js"></script>
+    <script type="module" src="componentRender.js"></script>
 </body>
+ 
 </html>

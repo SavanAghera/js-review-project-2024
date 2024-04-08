@@ -1,7 +1,12 @@
-class BaseTable extends BaseClass{
-    
+import { BaseClass } from "./baseClass.js";
+
+export class BaseTable extends BaseClass{
+    constructor() {
+        super();
+        this.componentRenderer = this.componentRenderer.bind(this); // Bind `this` to componentRenderer
+  }
     render() {
-        super.render(this.componentRenderer)
+        super.render(this.componentRenderer);
     }
     componentRenderer() {
         const table = document.createElement('table');
