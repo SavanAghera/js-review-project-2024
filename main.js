@@ -1,4 +1,4 @@
-const tableData = [
+let tableData = [
     { productName: 'a', category: 'a1', price: 3 },
     { productName: 'b', category: 'a1', price: 2 },
     { productName: 'c', category: 'a2', price: 2 },

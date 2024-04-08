@@ -10,14 +10,42 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    
     <div id="main">
+        <div id="AddRow">
+            <table>
+                <tr>
+                    <td>Product Name: </td>
+                    <td>
+                        <input type="text" name="pname" id="pname" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Category: </td>
+                    <td>
+                        <input type="text" name="pcategory" id="pcategory" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Prize: </td>
+                    <td>
+                        <input type="number" name="pprize" id="pprize" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="addRowToTable">ADD</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <div id="SideBar"></div>
         <div id="Table"></div>
     </div>
+
     <script src="./baseTable.js"></script>
     <script src="./components/table.js"></script>
     <script src="./components/sidebar.js"></script>
+    <script src="./components/addRow.js"></script>
     <script src="./componentRender.js"></script>
 </body>
 </html>

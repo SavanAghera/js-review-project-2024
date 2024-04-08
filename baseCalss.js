@@ -1,7 +1,6 @@
 class BaseClass {
     constructor() {
         this.element = document.getElementById(this.constructor.name);
-
     }
     render(renderFun) {
         const childElement = renderFun();
@@ -10,6 +9,6 @@ class BaseClass {
         this.listenEvent();
     }
     listenEvent() {
-
+        document.addEventListener('rendering', () => this.render());    //for add functionality
     }
 }

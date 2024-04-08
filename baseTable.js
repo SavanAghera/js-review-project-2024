@@ -1,10 +1,11 @@
-class BaseTable extends BaseClass{
-    
+class BaseTable extends BaseClass {
+
     render() {
         super.render(this.componentRenderer)
     }
-    componentRenderer() {
+    componentRenderer = () => {
         const table = document.createElement('table');
+        // console.log(this); // will passes this of its children
         this.getRenderData().forEach(data => {
             const tr = document.createElement('tr');
             this.renderCells(tr, this.getCellData(data))
@@ -13,12 +14,12 @@ class BaseTable extends BaseClass{
         return table;
     }
     getRenderData() {
-        
+        return tableData;
     }
     getCellData(data) {
-       
+
     }
-    renderCells(element , cellData) {
+    renderCells(element, cellData) {
         // do not edit this function is possible
         cellData.forEach(data => {
             const childElement = document.createElement(data.elementName);
