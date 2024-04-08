@@ -5,3 +5,6 @@ const tableData = [
     { productName: 'd', category: 'a3', price: 2 },
     { productName: 'e', category: 'a3', price: 2 },
 ];
+
+const reRenderTable=new Event("reRenderTable");
+const upateInSideBar=new Event("upateInSideBar");

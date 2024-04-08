@@ -5,17 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="main.js"></script>
+    <script src="main.js" ></script>
     <script src="baseCalss.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    
+    <div>
+        <form id="newitemform">
+        <label for="name">Name</label>
+        <input type="text" name="productName" id="name">
+        <label for="category">category</label>
+        <input type="text" name="category" id="category">
+        <label for="price">Price</label>
+        <input type="text" name="price" id="price">
+        <input type="submit">
+    </form>
+    </div>
     <div id="main">
         <div id="SideBar"></div>
         <div id="Table"></div>
     </div>
     <script src="./baseTable.js"></script>
+    <script src="addScript.js"></script>
     <script src="./components/table.js"></script>
     <script src="./components/sidebar.js"></script>
     <script src="./componentRender.js"></script>

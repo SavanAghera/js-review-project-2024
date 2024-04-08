@@ -1,6 +1,24 @@
 class SideBar extends BaseTable {
     getRenderData() {
         const categories = [];
+        const alreadyStored=[];
+        tableData.forEach((ele)=>{
+            let index=alreadyStored.indexOf(ele.category)
+            if(index!==-1){
+                let obj= categories.find((ele2)=>{
+                    let x=ele2;
+                    return ele2.name===ele.category
+                })
+                if(obj){
+                obj.count+=1;
+                obj.price= Number(obj.price)+Number(ele.price);
+                }
+            }else{
+                categories.push({name:ele.category,count:1,price:ele.price})
+                alreadyStored.push(ele.category);
+            }
+        })
+        return categories;
     }
     getCellData(data) {
         return [
@@ -10,7 +28,9 @@ class SideBar extends BaseTable {
         ]
     }
     listenEvent() {
-        document.addEventListener('delete', () => this.render())
+        document.addEventListener('upateInSideBar', (e) => {
+            this.render();
+        })   
     }
 
 }
