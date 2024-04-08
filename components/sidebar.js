@@ -1,7 +1,5 @@
 class SideBar extends BaseTable {
     getRenderData() {
-        const categories = [];
-
         const sideBarData = [];
         for (let i = 0; i < tableData.length; i++) {
             const row = tableData[i];
@@ -30,7 +28,6 @@ class SideBar extends BaseTable {
  
     }
     listenEvent() {
-        document.addEventListener('delete', () => this.render())
         document.addEventListener('delete', () => this.render());
         document.addEventListener('submit', () => this.render());
     }

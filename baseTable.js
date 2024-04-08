@@ -13,10 +13,8 @@ class BaseTable extends BaseClass{
         return table;
     }
     getRenderData() {
-        return [];
     }
     getCellData(data) {
-       return[];
     }
     renderCells(element , cellData) {
         // do not edit this function is possible
