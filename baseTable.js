@@ -3,7 +3,7 @@ class BaseTable extends BaseClass{
     render() {
         super.render(this.componentRenderer)
     }
-    componentRenderer() {
+    componentRenderer = () =>    {
         const table = document.createElement('table');
         this.getRenderData().forEach(data => {
             const tr = document.createElement('tr');
@@ -23,8 +23,11 @@ class BaseTable extends BaseClass{
         cellData.forEach(data => {
             const childElement = document.createElement(data.elementName);
             childElement.textContent = data.text;
-            childElement.onclick = data.handleClick
+            childElement.onclick = data.handleClick;
             element.append(childElement);
-        })
+            
+        });
+      
+
     }
 }

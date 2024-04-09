@@ -5,16 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="main.js"></script>
     <script src="baseCalss.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    
+    <div class="content" style="margin-left: 60px;margin-bottom: 16px;">
+        <input type="text" id="pName" placeholder="ProductName">
+        <input type="text" id="cat" placeholder="Category">
+        <input type="text" id="price" placeholder="price">
+        <input type="button" value="AddData" onclick="addData()">
+        
+    </div> 
     <div id="main">
         <div id="SideBar"></div>
         <div id="Table"></div>
     </div>
+    <script src="main.js"></script>
     <script src="./baseTable.js"></script>
     <script src="./components/table.js"></script>
     <script src="./components/sidebar.js"></script>
